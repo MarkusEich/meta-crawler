@@ -1,0 +1,20 @@
+Description=Wireless network connectivity (%i)
+Wants=network.target
+Before=network.target
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/sbin/ifconfig %i up
+ExecStart=/usr/sbin/wpa_supplicant -B -i %i -c /etc/wpa_supplicant.conf
+ExecStart=/sbin/dhclient %i
+RestartSec=5
+Restart=on-failure
+
+ExecStop=/sbin/ifconfig %i down
+
+[Install]
+WantedBy=multi-user.target

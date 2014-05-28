@@ -1,0 +1,25 @@
+From f7a90e1e6a5b5a0802449b7db8b6bbc0fe03da71 Mon Sep 17 00:00:00 2001
+From: Tobias Stark <tobias.stark@dfki.de>
+Date: Tue, 27 May 2014 17:09:55 +0200
+Subject: [PATCH] this patch is used to change the default frequency of the overo
+
+---
+ include/configs/omap3_overo.h |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/omap3_overo.h b/include/configs/omap3_overo.h
+index 62e047d..850e995 100644
+--- a/include/configs/omap3_overo.h
++++ b/include/configs/omap3_overo.h
+@@ -168,7 +168,7 @@
+ #define CONFIG_EXTRA_ENV_SETTINGS \
+ 	"loadaddr=0x82000000\0" \
+ 	"console=ttyO2,115200n8\0" \
+-	"mpurate=500\0" \
++	"mpurate=1000\0" \
+ 	"optargs=\0" \
+ 	"vram=12M\0" \
+ 	"dvimode=1024x768MR-16@60\0" \
+-- 
+1.7.9.5
+
